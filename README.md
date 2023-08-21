@@ -1,1 +1,1 @@
-# hm_django
+# hm_django_orm
