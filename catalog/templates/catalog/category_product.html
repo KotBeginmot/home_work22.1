@@ -1,0 +1,23 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+
+{{ title }}
+{% for object in object_list %}
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <div class="card mb-1 box-shadow">
+                {{object.name}} - {{object.overview|slice:100}} , {{object.purchase_price}}
+                        <img class='card-img-top'
+                             src="{{object.image|mymedia}}"
+                             alt="Card image cap"
+
+                        </img>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+{% endblock %}

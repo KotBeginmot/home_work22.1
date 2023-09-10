@@ -1,0 +1,26 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+<main>
+    {% for object in object_list %}
+    <section class="py-5 text-center container">
+        <div class="row py-lg-7 mb-4">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        {{object.name}} - {{object.overview|slice:100}}
+                    </div>
+                </div>
+            </div>
+            <p>
+                <a href="{% url 'catalog:category_product' object.id %}" class="btn btn-primary my-2">Купить</a>
+            </p>
+
+
+
+        </div>
+    </section>
+    {% endfor %}
+</main>
+
+{% endblock %}
