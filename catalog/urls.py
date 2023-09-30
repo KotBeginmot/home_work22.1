@@ -6,6 +6,8 @@ from catalog.views import home, contacts
 
 
 urlpatterns = [
+    path('contacts/', ContactsCreateView.as_view(), name='contacts'),
+    path('products/', ProductsListView.as_view(), name='products'),
+    path('category_product/<int:id>/', Category_ProductsListView.as_view(), name='category_product'),
     path('', home, name='home'),
-    path('contacts/', contacts, name = 'contacts')
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
