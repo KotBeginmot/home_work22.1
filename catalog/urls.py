@@ -1,9 +1,9 @@
-from django.conf import settings
-from django.conf.urls.static import static
 from django.urls import path
 
-from catalog.views import home, contacts
+from catalog.apps import CatalogConfig
+from catalog.views import home, ContactsCreateView, ProductsListView, Category_ProductsListView
 
+app_name = CatalogConfig.name
 
 urlpatterns = [
     path('contacts/', ContactsCreateView.as_view(), name='contacts'),
