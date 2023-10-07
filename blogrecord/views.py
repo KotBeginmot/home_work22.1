@@ -10,7 +10,6 @@ from blogrecord.models import BlogRecord
 # Create your views here.
 class BlogListView(ListView):
     model = BlogRecord
-    print(BlogRecord.objects.filter(id=1))
 
     def get_queryset(self, *args, **kwargs):
         queryset = super().get_queryset()
